@@ -30,12 +30,12 @@ def install():
                     with cd("settings"):
                         run("rm -f currentenv.py")
                         run("ln -s prod.py currentenv.py")
-                    run("source {app_dir}/bin/activate && python manage.py syncdb".format(
-                        app_dir=env.app_dir
-                    ))
-                    run("source {app_dir}/bin/activate && python manage.py migrate".format(
-                        app_dir=env.app_dir
-                    ))
+                    # run("source {app_dir}/bin/activate && python manage.py syncdb".format(
+                    #     app_dir=env.app_dir
+                    # ))
+                    # run("source {app_dir}/bin/activate && python manage.py migrate".format(
+                    #     app_dir=env.app_dir
+                    # ))
                     run('source {app_dir}/bin/activate && python manage.py collectstatic -v0 --noinput')
         run("/etc/rc.d/uwsgi reload")
         run("/etc/rc.d/nginx reload")
@@ -44,8 +44,8 @@ def update():
     """Updates code base on server"""
     with settings(user="root"):
         with cd("{app_dir}/master".format(app_dir=env.app_dir)):
-            run("git pull && git update")
-            run("source {app_dir}/bin/activate && pip install -r requirements.txt".format(
+            run("git pull")
+            run("source {app_dir}/bin/activate && python setup.py install".format(
                 app_dir=env.app_dir
             ))
             run("cp {app_dir}/master/nginx.conf {nginx_conf_dir}{app}.conf".format(
@@ -54,12 +54,12 @@ def update():
                 app=env.app
             ))
             with cd("{app}".format(app=env.app)):
-                run("source {app_dir}/bin/activate && python manage.py syncdb".format(
-                    app_dir=env.app_dir
-                ))
-                run("source {app_dir}/bin/activate && python manage.py migrate".format(
-                    app_dir=env.app_dir
-                ))
+                # run("source {app_dir}/bin/activate && python manage.py syncdb".format(
+                #     app_dir=env.app_dir
+                # ))
+                # run("source {app_dir}/bin/activate && python manage.py migrate".format(
+                #     app_dir=env.app_dir
+                # ))
                 run('source {app_dir}/bin/activate && python manage.py collectstatic -v0 --noinput'.format(
                     app_dir=env.app_dir
                 ))
