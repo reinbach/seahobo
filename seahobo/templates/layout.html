@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Sea Hobo - Morgan 382 - For Sale</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="screen" />
+    <style type="text/css" media="screen">
+      section { padding-top: 60px; }
+      .footer {
+        border-top: 1px solid #E5E5E5;
+        margin-top: 45px;
+        padding: 35px 0 36px;
+      }
+      .carousel {
+        padding: 5px;
+        border: solid 1px #CCC;
+        -moz-box-shadow: 1px 1px 5px #999;
+	-webkit-box-shadow: 1px 1px 5px #999;
+        box-shadow: 1px 1px 5px #999;
+      }
+    </style>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap-carousel.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container">
+	  <a class="brand" href="/">Sea Hobo</a>
+	  <ul class="nav pull-right">
+	    <li class="active"><a href="mailto:greg@reinbach.com?Subject=Sea Hobo">US $25,000</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="container">
+      {% block content %}{% endblock content %}
+      <div class="footer">
+	<p class="pull-right">
+	  <a href="#">Back to top</a>
+	</p>
+	<p>
+	  Greg Reinbach
+	</p>
+      </div>
+    </div>
+    {% block page_js %}{% endblock page_js %}
+  </body>
+</html>

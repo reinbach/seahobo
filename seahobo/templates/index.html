@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section id="images">
+      <div class="row">
+	<div class="span12 columns">
+	  <div id="myCarousel" class="carousel slide">
+	    <div class="carousel-inner">
+	      <div class="item active">
+		<img src="{{ STATIC_URL }}img/anchor1.jpg" alt="Anchor 1" />
+	      </div>
+	      <div class="item">
+		<img src="{{ STATIC_URL }}img/anchor2.jpg" alt="Anchor 2" />
+	      </div>
+	      <div class="item">
+		<img src="{{ STATIC_URL }}img/hard.jpg" alt="Hard" />
+	      </div>
+	      <div class="item">
+		<img src="{{ STATIC_URL }}img/fore.jpg" alt="Fore" />
+	      </div>
+	      <div class="item">
+		<img src="{{ STATIC_URL }}img/aft.jpg" alt="Aft" />
+	      </div>
+	      <div class="item">
+		<img src="{{ STATIC_URL }}img/galley.jpg" alt="Galley" />
+	      </div>
+	    </div>
+	    <a class="left carousel-control" data-slide="prev" href="#myCarousel">‹</a>
+	    <a class="right carousel-control" data-slide="next" href="#myCarousel">›</a>
+	  </div>
+	</div>
+      </div>
+    </section>
+
+    <div class="row" style="text-align: center;">
+      <div class="span12">
+	<a class="btn btn-primary btn-large" href="mailto:greg@reinbach.com?Subject=Sea Hobo">
+	  For Sale - $25,000
+	</a>
+	<p>
+	  Email <a href="mailto:greg@reinbach.com">greg@reinbach.com</a> for more information.
+	</p>
+      </div>
+    </div>
+
+    <section id="overview">
+      <div class="page-header">
+	<h1>Morgan 382 <small>built 1980</small></h1>
+      </div>
+      <div class="row">
+	<div class="span3 columns">
+	  <h2>Builder/Designer</h2>
+	  <p>
+	    <span class="label label-info">Builder:</span> Morgan Yachts
+	    <br />
+	    <span class="label label-info">Designer:</span> Ted Brewer
+	  </p>
+	</div>
+	<div class="span3 columns">
+	  <h2>Dimensions</h2>
+	  <p>
+	    <span class="label label-info">LOA:</span> 38'
+	    <br />
+	    <span class="label label-info">LWL:</span> 30' 6''
+	    <br />
+	    <span class="label label-info">Beam:</span> 12'
+	    <br />
+	    <span class="label label-info">Displacement:</span> 17,000 lbs
+	    <br />
+	    <span class="label label-info">Draft:</span> 5'
+	    <br />
+	    <span class="label label-info">Ballast:</span> 6,800 lbs
+	  </p>
+	</div>
+	<div class="span3 columns">
+	  <h2>Engine</h2>
+	  <p>
+	    <span class="label label-info">Type:</span> Perkins
+	    <br />
+	    <span class="label label-info">HP:</span> 50
+	    <br />
+	    <span class="label label-info">Model:</span> 4-108
+	  </p>
+	</div>
+	<div class="span3 columns">
+	  <h2>Tankage</h2>
+	  <p>
+	    <span class="label label-info">Fuel:</span> 40 gals
+	    <br />
+	    <span class="label label-info">Water:</span> 90 gals (2 tanks)
+	    <br />
+	    <span class="label label-info">Holding:</span> 15 gals
+	  </p>
+	</div>
+      </div>
+    </section>
+
+    <section id="accommodation">
+      <div class="page-header">
+	<h1>Accommodation <small>description of boat layout</small></h1>
+      </div>
+      <div class="row">
+	<div class="span12 columns">
+	  <p>The layout features over & under berths forward including a hanging locker.</p>
+	  <p>Next aft to port is the head compartment with a separate shower area, and opposite to starboard is a generous hanging locker with additional drawer storage.</p>
+	  <p>The main salon features a L-shaped dinette to port including a fixed table, and across to starboard is a settee with storage outboard.</p>
+	  <p>Aft to port is the U-shaped galley, and across to starboard is the navigation station followed by the quarter berth.</p>
+	  <p>There is excellent storage throughout the interior, and five opening port lights and two opening deck hatches provide plenty of ventilation and natural light.</p>
+	</div>
+      </div>
+    </section>
+
+    <section id="equipment">
+      <div class="page-header">
+	<h1>Equipment <small>everything that comes with the boat<small></h1>
+      </div>
+      <div class="row">
+	<div class="span4 columns">
+	  <h2>Electrical & Electronics</h2>
+	  <ul>
+	    <li>12 VDC & 110 VAC electrical systems</li>
+	    <li>One starter battery (2008)</li>
+	    <li>Two house batteries (2008)</li>
+	    <li>High output alternator</li>
+	    <li>AM/FM/cassette stero & speakers</li>
+	    <li>Navinco belt-driven wheel pilot</li>
+	    <li>Apelco loran</li>
+	    <li>Uniden depth sounder</li>
+	    <li>Signet knotmeter</li>
+	    <li>West Marine VHF radio</li>
+	    <li>Chelsea tide & time clock</li>
+	    <li>Gemini binnacle mounted compass</li>
+	  </ul>
+	</div>
+	<div class="span4 columns">
+	  <h2>On Deck</h2>
+	  <ul>
+	    <li>Mainsail w/lazy jacks</li>
+	    <li>120% genoa</li>
+	    <li>Furlex roller furling for genao</li>
+	    <li>Mainsail cover</li>
+	    <li>Stern rail transom boarding ladder</li>
+	    <li>Solar panel</li>
+	    <li>Lifesling & horseshoe bouy</li>
+	    <li>Manual bilge pump in cockpit</li>
+	    <li>Cockpit cushions</li>
+	    <li>Forespar whisker pole</li>
+	    <li>Dodger & attached cockpit sun shade</li>
+	    <li>Cockpit table</li>
+	    <li>Portable gas grill</li>
+	    <li>35# Delta anchor w/chain & rode</li>
+	    <li>23# Fortress w/chain & rode</li>
+	    <li>Forespar lifting davit</li>
+	  </ul>
+	</div>
+	<div class="span4 columns">
+	  <h2>Interior</h2>
+	  <ul>
+	    <li>Force 10 two-burner stove</li>
+	    <li>Ice box</li>
+	    <li>Three-way valve for MSD discharge</li>
+	    <li>Engine driven hot water system</li>
+	  </ul>
+	</div>
+      </div>
+    </section>
+
+    <section id="other">
+      <div class="page-header">
+	<h1>Other <small>independent information about the boat</small></h1>
+      </div>
+      <div class="row">
+	<div class="span6 columns">
+	  <h2>Resources</h2>
+	  <p>
+	    <a href="http://www.morgan38.org">Morgans 38 Owners Board (http://www.morgan38.org)</a>
+	  </p>
+	</div>
+	<div class="span6 columns">
+	  <h2>Reviews</h2>
+	  <p>
+	    <a href="http://www.cruisingworld.com/sailboats/boat-reviews/morgan-382-low-profile-high-return">
+	      Cruising World
+	    </a>
+	    <br />
+	    <a href="http://www.boatus.com/jackhornor/sail/Morgan38.asp">BoatUS</a>
+	  </p>
+	</div>
+      </div>
+    </section>
+{% endblock content %}
+
+{% block page_js %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.carousel').carousel({
+          interval: 4000
+        });
+      });
+    </script>
+{% endblock page_js %}
