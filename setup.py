@@ -3,7 +3,7 @@ from setuptools import setup
 
 requires = [
     'Django==1.4',
-#    'psycopg2==2.4.5',
+    'psycopg2==2.4.5',
     'Jinja2==2.6',
     'Coffin==0.3.6',
     'Fabric==1.4.2',

@@ -12,9 +12,9 @@ env.uwsgi_conf_dir = "/etc/uwsgi/apps/"
 def install():
     """Installs app on server"""
     with settings(user="root"):
-        # run("virtualenv --distribute --no-site-packages -p python2 {app_dir}".format(
-        #     app_dir=env.app_dir
-        # ))
+        run("virtualenv --distribute --no-site-packages -p python2 {app_dir}".format(
+            app_dir=env.app_dir
+        ))
         with cd(env.app_dir):
             # clone repo
             run("git clone {repo} master".format(repo=env.repo))
@@ -42,7 +42,9 @@ def install():
                     # run("source {app_dir}/bin/activate && python manage.py migrate".format(
                     #     app_dir=env.app_dir
                     # ))
-                    run('source {app_dir}/bin/activate && python manage.py collectstatic -v0 --noinput')
+                    run('source {app_dir}/bin/activate && python manage.py collectstatic -v0 --noinput'.format(
+                        app_dir=env.app_dir
+                    ))
         run("systemctl reload uwsgi")
         run("systemctl reload nginx")
 
