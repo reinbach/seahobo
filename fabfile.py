@@ -2,11 +2,12 @@ from __future__ import with_statement
 from fabric.api import *
 
 env.app = 'seahobo'
-env.hosts = ['web1']
+env.hosts = ['web2']
 env.sites_dir = '/opt/sites/'
 env.app_dir = env.sites_dir + env.app
 env.repo = "https://github.com/reinbach/seahobo.git"
 env.nginx_conf_dir = "/opt/nginx/conf/sites/"
+env.uwsgi_conf_dir = "/etc/uwsgi/apps/"
 
 def install():
     """Installs app on server"""
@@ -26,6 +27,11 @@ def install():
                     nginx_conf_dir=env.nginx_conf_dir,
                     app=env.app
                 ))
+                run("cp {app_dir}/master/uwsgi.ini {uwsgi_conf_dir}{app}.ini".format(
+                    app_dir=env.app_dir,
+                    uwsgi_conf_dir=env.uwsgi_conf_dir,
+                    app=env.app
+                ))
                 with cd("{app}".format(app=env.app)):
                     with cd("settings"):
                         run("rm -f currentenv.py")
@@ -37,8 +43,8 @@ def install():
                     #     app_dir=env.app_dir
                     # ))
                     run('source {app_dir}/bin/activate && python manage.py collectstatic -v0 --noinput')
-        run("/etc/rc.d/uwsgi reload")
-        run("/etc/rc.d/nginx reload")
+        run("systemctl reload uwsgi")
+        run("systemctl reload nginx")
 
 def update():
     """Updates code base on server"""
@@ -53,6 +59,11 @@ def update():
                 nginx_conf_dir=env.nginx_conf_dir,
                 app=env.app
             ))
+            run("cp {app_dir}/master/uwsgi.ini {uwsgi_conf_dir}{app}.ini".format(
+                app_dir=env.app_dir,
+                uwsgi_conf_dir=env.uwsgi_conf_dir,
+                app=env.app
+            ))
             with cd("{app}".format(app=env.app)):
                 # run("source {app_dir}/bin/activate && python manage.py syncdb".format(
                 #     app_dir=env.app_dir
@@ -63,5 +74,5 @@ def update():
                 run('source {app_dir}/bin/activate && python manage.py collectstatic -v0 --noinput'.format(
                     app_dir=env.app_dir
                 ))
-        run("/etc/rc.d/uwsgi reload")
-        run("/etc/rc.d/nginx reload")
+        run("systemctl reload uwsgi")
+        run("systemctl reload nginx")
